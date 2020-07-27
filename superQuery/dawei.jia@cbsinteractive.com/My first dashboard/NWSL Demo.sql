@@ -1,12 +1,12 @@
 select
 case
-when b.age < 18 then "18-"
+when b.age < 18 then "under 18"
 when b.age >= 18 and b.age <= 24 then "18-24"
 when b.age >= 25 and b.age <= 34 then "25-34"
 when b.age >= 35 and b.age <= 44 then "35-44"
 when b.age >= 45 and b.age <= 54 then "45-54"
 when b.age >= 55 and b.age <= 64 then "55-64"
-when b.age >= 65 then "65+"
+when b.age >= 65 then "+65"
 else null end as age
 ,
 b.gender, 
