@@ -5,4 +5,3 @@ where video_full_episode_ind = TRUE
     and v69_registration_id_nbr is not null
     and v9_rsid IN ('cnetcbscomsite','cbsicbsapp', 'cbsicbsott')
     and day_dt >= "2020-06-27"
-    and media_start_cnt>0
