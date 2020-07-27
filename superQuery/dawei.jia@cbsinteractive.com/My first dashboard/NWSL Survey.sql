@@ -6,6 +6,6 @@ where video_full_episode_ind = TRUE
     and v69_registration_id_nbr is not null
     and v9_rsid IN ('cnetcbscomsite','cbsicbsapp', 'cbsicbsott')
     and day_dt >= "2020-06-27"
-    and duration_sec_qty/60 >= 10
+   -- and duration_sec_qty/60 >= 3
 group by 1
 --group by 1
