@@ -1,4 +1,5 @@
-SELECT day_dt, replace(ftag,"ftag:","") as ftag, count(distinct visit_session_id) as visits, count(distinct post_visitor_id) as devices
+SELECT day_dt, replace(ftag,"ftag:","") as ftag, count(distinct visit_session_id) as visits, count(distinct post_visitor_id) as devices,
+       COUNT(post_evar52_desc) as streams
 FROM  `i-dss-ent-data.dw_vw.omniture_event_cdm_cnetcbscomsite`, UNNEST(post_campaign_nm) as ftag 
 WHERE  day_dt = '2020-06-01'
 and ftag like  '%AAM%'
