@@ -1,6 +1,6 @@
 SELECT day_dt, replace(ftag,"ftag:","") as ftag, count(distinct visit_session_id) as visits, count(distinct post_visitor_id) as devices,
        COUNT(distinct case when post_evar10_desc = "svod_complete" or post_evar10_desc = "billing|payment complete" then post_visitor_id end) as orders,
-       COUNT(case when event.name = "Instance of eVar52" then post_visitor_id end) as streams
+       COUNT(distinct case when event.name = "Instance of eVar52" then event_dt_ut end) as streams
 FROM  `i-dss-ent-data.dw_vw.omniture_event_cdm_cnetcbscomsite`, UNNEST(post_campaign_nm) as ftag, UNNEST(post_event_id_list_desc) as event
 WHERE  day_dt = '2020-06-01'
 and ftag like  '%AAM%'
